@@ -5,16 +5,16 @@ using System.Linq;
 namespace AOC.Challenges {
     class D5 {
         static List<List<char>> allStacks = new List<List<char>>{
-        new List<char>(new [] {'S', 'Z', 'P', 'D', 'L', 'B', 'F', 'C'}),
-        new List<char>(new [] {'N', 'V', 'G', 'P', 'H', 'W', 'B'}),
-        new List<char>(new [] {'F', 'W', 'B', 'J', 'G'}),
-        new List<char>(new [] {'G', 'J', 'N', 'F', 'L', 'W', 'C', 'S'}),
-        new List<char>(new [] {'W', 'J', 'L', 'T', 'P', 'M', 'S', 'H'}),
-        new List<char>(new [] {'B', 'C', 'W', 'G', 'F', 'S'}),
-        new List<char>(new [] {'H', 'T', 'P', 'M', 'Q', 'B', 'W'}),
-        new List<char>(new [] {'F', 'S', 'W', 'T'}),
-        new List<char>(new [] {'N', 'C', 'R'}),
-    };
+            new List<char>(new [] {'S', 'Z', 'P', 'D', 'L', 'B', 'F', 'C'}),
+            new List<char>(new [] {'N', 'V', 'G', 'P', 'H', 'W', 'B'}),
+            new List<char>(new [] {'F', 'W', 'B', 'J', 'G'}),
+            new List<char>(new [] {'G', 'J', 'N', 'F', 'L', 'W', 'C', 'S'}),
+            new List<char>(new [] {'W', 'J', 'L', 'T', 'P', 'M', 'S', 'H'}),
+            new List<char>(new [] {'B', 'C', 'W', 'G', 'F', 'S'}),
+            new List<char>(new [] {'H', 'T', 'P', 'M', 'Q', 'B', 'W'}),
+            new List<char>(new [] {'F', 'S', 'W', 'T'}),
+            new List<char>(new [] {'N', 'C', 'R'}),
+        };
 
         public static void Run() {
             DisplayAllStacks();
