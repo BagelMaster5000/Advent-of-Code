@@ -19,6 +19,14 @@ namespace AOC.Challenges {
         public static void Run() {
             DisplayAllStacks();
 
+            //Part1Mover();
+            Part2Mover();
+
+            DisplayAllStacks();
+            DisplayTopsOfStacks();
+        }
+
+        private static void Part1Mover() {
             IEnumerable<String> inputs = System.IO.File.ReadLines("Challenges\\P5_Input.txt");
             foreach (String input in inputs) {
                 string[] moveInfo = input.Split(' ');
@@ -33,11 +41,33 @@ namespace AOC.Challenges {
                     fromStack.RemoveAt(fromStack.Count - 1);
                 }
             }
-
-            DisplayAllStacks();
-            DisplayTopsOfStacks();
         }
 
+        private static void Part2Mover() {
+            IEnumerable<String> inputs = System.IO.File.ReadLines("Challenges\\P5_Input.txt");
+            foreach (String input in inputs) {
+                string[] moveInfo = input.Split(' ');
+                int moveAmt = int.Parse(moveInfo[1]);
+                int fromStackIndex = int.Parse(moveInfo[3]) - 1;
+                int toStackIndex = int.Parse(moveInfo[5]) - 1;
+
+                List<char> fromStack = allStacks[fromStackIndex];
+                List<char> toStack = allStacks[toStackIndex];
+                List<char> tempList = new List<char>();
+
+                for (int m = 0; m < moveAmt && fromStack.Count > 0; m++) {
+                    tempList.Add(fromStack.ElementAt(fromStack.Count - 1));
+                    fromStack.RemoveAt(fromStack.Count - 1);
+                }
+
+                for (int t = tempList.Count - 1; t >= 0; t--) {
+                    toStack.Add(tempList.ElementAt(t));
+                }
+            }
+        }
+
+
+        #region Displaying
         private static void DisplayAllStacks() {
             foreach (List<char> s in allStacks) {
                 Console.Write("[ ");
@@ -59,5 +89,6 @@ namespace AOC.Challenges {
 
             Console.WriteLine();
         }
+        #endregion
     }
 }
