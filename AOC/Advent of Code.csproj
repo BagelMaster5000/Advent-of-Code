@@ -44,14 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdventOfCode.cs" />
-    <Compile Include="Challenges\P5.cs" />
+    <Compile Include="Challenges\D5\D5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Challenges\P5_Input.txt">
+    <Content Include="Challenges\D5\D5_Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

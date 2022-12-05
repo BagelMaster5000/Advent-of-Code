@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AOC.Challenges {
-    class P5 {
+    class D5 {
         static List<List<char>> allStacks = new List<List<char>>{
         new List<char>(new [] {'S', 'Z', 'P', 'D', 'L', 'B', 'F', 'C'}),
         new List<char>(new [] {'N', 'V', 'G', 'P', 'H', 'W', 'B'}),
@@ -27,7 +27,7 @@ namespace AOC.Challenges {
         }
 
         private static void Part1Mover() {
-            IEnumerable<String> inputs = System.IO.File.ReadLines("Challenges\\P5_Input.txt");
+            IEnumerable<String> inputs = System.IO.File.ReadLines("Challenges\\D5\\D5_Input.txt");
             foreach (String input in inputs) {
                 string[] moveInfo = input.Split(' ');
                 int moveAmt = int.Parse(moveInfo[1]);
@@ -44,7 +44,7 @@ namespace AOC.Challenges {
         }
 
         private static void Part2Mover() {
-            IEnumerable<String> inputs = System.IO.File.ReadLines("Challenges\\P5_Input.txt");
+            IEnumerable<String> inputs = System.IO.File.ReadLines("Challenges\\D5\\D5_Input.txt");
             foreach (String input in inputs) {
                 string[] moveInfo = input.Split(' ');
                 int moveAmt = int.Parse(moveInfo[1]);

@@ -3,7 +3,7 @@
 namespace AOC {
     class AdventOfCode {
         static void Main(string[] args) {
-            P5.Run();
+            D5.Run();
         }
     }
 }
