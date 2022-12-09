@@ -16,7 +16,6 @@ namespace AOC.Challenges {
         private static int Part1Process4Characters() {
             string text = System.IO.File.ReadAllText("Challenges\\D6\\D6_Input.txt");
 
-            int charactersProcessed = -1;
             for (int c = 0; c < text.Length - 3; c++) {
                 char c1 = text[c];
                 char c2 = text[c + 1];
@@ -24,18 +23,16 @@ namespace AOC.Challenges {
                 char c4 = text[c + 3];
 
                 if (c1 != c2 && c1 != c3 && c1 != c4 && c2 != c3 && c2 != c4 && c3 != c4) {
-                    charactersProcessed = c + 4;
-                    break;
+                    return c + 4;
                 }
             }
 
-            return charactersProcessed;
+            return -1;
         }
 
         private static int Part2Process14Characters() {
             string text = System.IO.File.ReadAllText("Challenges\\D6\\D6_Input.txt");
 
-            int charactersProcessed = -1;
             for (int c = 0; c < text.Length - 13; c++) {
                 List<char> chars = new List<char>();
                 for (int n = 0; n < 14; n++) {
@@ -48,12 +45,11 @@ namespace AOC.Challenges {
                 }
 
                 if (chars.Count == 14) {
-                    charactersProcessed = c + 14;
-                    break;
+                    return c + 14;
                 }
             }
 
-            return charactersProcessed;
+            return -1;
         }
     }
 }
