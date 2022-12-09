@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AdventOfCode.cs" />
     <Compile Include="Challenges\D1\D1.cs" />
+    <Compile Include="Challenges\D2\D2.cs" />
     <Compile Include="Challenges\D5\D5.cs" />
     <Compile Include="Challenges\D6\D6.cs" />
     <Compile Include="Challenges\D7\D7.cs" />
@@ -55,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Challenges\D1\D1_Input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Challenges\D2\D2_Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Challenges\D5\D5_Input.txt">
