@@ -54,6 +54,7 @@
     <Compile Include="Challenges\D6\D6.cs" />
     <Compile Include="Challenges\D7\D7.cs" />
     <Compile Include="Challenges\D8\D8.cs" />
+    <Compile Include="Challenges\D10\D10.cs" />
     <Compile Include="Challenges\D9\D9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,6 +84,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Challenges\D8\D8_Input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Challenges\D10\D10_Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Challenges\D9\D9_Input.txt">
