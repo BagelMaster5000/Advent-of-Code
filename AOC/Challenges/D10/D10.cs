@@ -16,6 +16,20 @@ namespace AOC.Challenges {
             int signalStrengthTotal = Pt1CalcTotalSignalStrength();
             Console.WriteLine("Pt 1 Total Signal Strength: " + signalStrengthTotal);
             Console.WriteLine();
+
+            bool[,] crtScreen = Pt2CalcDrawnCRT();
+            Console.WriteLine("Pt 2 CRT:");
+            for (int r = 0; r < 6; r++) {
+                for (int c = 0; c < 40; c++) {
+                    if (crtScreen[r, c]) {
+                        Console.Write("#");
+                    }
+                    else {
+                        Console.Write(".");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
         #region Part 1
@@ -52,6 +66,44 @@ namespace AOC.Challenges {
             }
 
             return signalStrengthTotal;
+        }
+        #endregion
+
+        #region Part 2
+        private static bool[,] Pt2CalcDrawnCRT() {
+            bool[,] crtScreen = new bool[6, 40];
+
+            int X = 1;
+            int cycleNum = 0;
+            Process curProcess = null;
+
+            IEnumerable<string> inputs = System.IO.File.ReadLines("Challenges\\D10\\D10_Input.txt");
+            int i = 0;
+
+            while (i < inputs.Count() || curProcess != null) {
+                if (curProcess == null && i < inputs.Count()) { // Don't accept another process if one is already processing
+                    string[] inputTokens = inputs.ElementAt(i).Split(' ');
+                    if (inputTokens[0] == "addx") {
+                        int addAmt = int.Parse(inputTokens[1]);
+                        curProcess = new Process(addAmt, cycleNum + 2);
+                    }
+
+                    i++;
+                }
+
+                if (Math.Abs((cycleNum % 40) - X) <= 1) {
+                    crtScreen[cycleNum / 40, cycleNum % 40] = true;
+                }
+
+                cycleNum++;
+
+                if (curProcess != null && curProcess.completionTime == cycleNum) {
+                    X += curProcess.addAmount;
+                    curProcess = null;
+                }
+            }
+
+            return crtScreen;
         }
         #endregion
     }
