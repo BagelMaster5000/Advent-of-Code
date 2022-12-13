@@ -12,7 +12,8 @@ namespace AOC {
             //D7.Run();
             //D8.Run();
             //D9.Run();
-            D10.Run();
+            //D10.Run();
+            D11.Run();
         }
     }
 }
