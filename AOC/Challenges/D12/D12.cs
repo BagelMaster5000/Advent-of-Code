@@ -17,20 +17,7 @@ namespace AOC.Challenges {
             Console.WriteLine("Pt 1 Distance from start to goal: " + distanceFromStartToGoal);
             Console.WriteLine();
 
-            int minDistanceFromLowestPointToGoal = int.MaxValue;
-            int closestLowPointC = -1, closestLowPointR = -1;
-            for (int c = 0; c < numCols; c++) {
-                for (int r = 0; r < numRows; r++) {
-                    if (heightMap[c, r] == 0) {
-                        int distanceToGoal = DijkstraCalcShortestPaths(c, r);
-                        if (distanceToGoal != -1 && distanceToGoal < minDistanceFromLowestPointToGoal) {
-                            minDistanceFromLowestPointToGoal = distanceToGoal;
-                            closestLowPointC = c;
-                            closestLowPointR = r;
-                        }
-                    }
-                }
-            }
+            int minDistanceFromLowestPointToGoal = Pt2CalcMinDistanceFromLowestPointToGoal();
             Console.WriteLine("Pt 2 Distance from any \'a\' to goal: " + minDistanceFromLowestPointToGoal);
             Console.WriteLine();
         }
@@ -105,6 +92,22 @@ namespace AOC.Challenges {
             }
 
             return -1;
+        }
+
+        private static int Pt2CalcMinDistanceFromLowestPointToGoal() {
+            int minDistanceFromLowestPointToGoal = int.MaxValue;
+            for (int c = 0; c < numCols; c++) {
+                for (int r = 0; r < numRows; r++) {
+                    if (heightMap[c, r] == 0) {
+                        int distanceToGoal = DijkstraCalcShortestPaths(c, r);
+                        if (distanceToGoal != -1 && distanceToGoal < minDistanceFromLowestPointToGoal) {
+                            minDistanceFromLowestPointToGoal = distanceToGoal;
+                        }
+                    }
+                }
+            }
+
+            return minDistanceFromLowestPointToGoal;
         }
 
         #region Helpers
