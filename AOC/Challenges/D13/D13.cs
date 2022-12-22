@@ -32,10 +32,11 @@ namespace AOC.Challenges {
                 value = setValue;
             }
 
-            public override string ToString() {
-                return value.ToString();
-            }
+            public override string ToString() => value.ToString();
         }
+
+
+
 
         public static void Run() {
             int sumOfCorrectOrderPairIndexes = Part1CalcSumOfCorrectOrderPairIndexes();
@@ -53,6 +54,7 @@ namespace AOC.Challenges {
             Console.WriteLine("Pt 2 product of divider packet indexes: " + productOfDividerPacketIndexes);
             Console.WriteLine();
         }
+
 
         #region Part 1
         private static int Part1CalcSumOfCorrectOrderPairIndexes() {
@@ -75,8 +77,8 @@ namespace AOC.Challenges {
         }
         #endregion
 
-        #region Part 2
 
+        #region Part 2
         private static List<CompareList> Part2CreateAndSortAllLists() {
             List<CompareList> allLists = Part2CreateAllLists();
             allLists.Add(CreateCompareList("[[2]]"));
@@ -135,6 +137,9 @@ namespace AOC.Challenges {
             return productOfDividerPacketIndexes;
         }
         #endregion
+
+
+
 
         #region Helpers
         private static int CompareElements(CompareElement e1, CompareElement e2) {
